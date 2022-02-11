@@ -4,8 +4,8 @@ import WeatherCurrent from "./weatherCurrent.model.js";
 import WeatherForecast from "./weatherForecast.model.js";
 
 const apiKey = process.env.VUE_APP_WEATHER_API_KEY;
-const defaultLat = "39.74362";
-const defaultLon = "-8.80705";
+const defaultLat = "41.245368270623544";
+const defaultLon = "-8.722135782373774";
 
 export const getLocationWeather = async ({ lat = "", lon = "", city = "" }) => {
   const getLat = lat || defaultLat;
