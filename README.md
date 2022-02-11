@@ -30,6 +30,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### OpenWeather API Key
 
-```
-To run the project you have to Sign up to https://openweathermap.org/appid, get your API Key, and create a .env.local file with the variable: VUE_APP_WEATHER_API_KEY with your API key
-```
+
+To run the project you have to:
+- Sign up to https://openweathermap.org/appid
+- Get your API Key
+- Create a .env.local file with the variable: ```VUE_APP_WEATHER_API_KEY``` with your API key
