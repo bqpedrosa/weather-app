@@ -3,7 +3,7 @@ import axios from "axios";
 import WeatherCurrent from "./weatherCurrent.model.js";
 import WeatherForecast from "./weatherForecast.model.js";
 
-const apiKey = "8a88acb64ae5d8fa3623e5f984ba86de";
+const apiKey = process.env.VUE_APP_WEATHER_API_KEY;
 const defaultLat = "39.74362";
 const defaultLon = "-8.80705";
 
