@@ -48,6 +48,10 @@ export default {
 </script>
 
 <style lang="scss">
+.weather-forecast__city {
+  padding: 8px;
+}
+
 .weather-forecast__city-cards {
   display: flex;
   flex-wrap: wrap;

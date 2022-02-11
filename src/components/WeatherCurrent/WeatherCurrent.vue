@@ -1,8 +1,12 @@
 <template>
   <div class="weather-current">
-    <div v-for="current in weather" :key="current.id">
+    <div
+      class="weather-current__box"
+      v-for="current in weather"
+      :key="current.id"
+    >
       <button
-        class="weather-forecast__city-name-button"
+        class="weather-current__box-button"
         @click="handleDeleteButton(current.name)"
       >
         Remove
@@ -36,3 +40,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.weather-current__box {
+  padding: 8px;
+}
+</style>

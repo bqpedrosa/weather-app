@@ -1,17 +1,20 @@
 <template>
   <div class="weather">
-    <WeatherHeader
-      v-model="cityChosen"
-      title="Weather App"
-      @handleInputClick="handleInputClick"
-    />
+    <div class="weather__header">
+      <WeatherHeader
+        class="weather__header-main"
+        v-model="cityChosen"
+        title="Weather App"
+        @handleInputClick="handleInputClick"
+      />
 
-    <NavigationBar
-      class="weather__navigation"
-      :getAllItems="weatherItems"
-      :activeItem="typeOfWeather"
-      @handleNavigationBarItemClick="handleItemClick"
-    />
+      <NavigationBar
+        class="weather__header-navigation"
+        :getAllItems="weatherItems"
+        :activeItem="typeOfWeather"
+        @handleNavigationBarItemClick="handleItemClick"
+      />
+    </div>
 
     <div class="weather__main">
       <WeatherForecast
@@ -23,8 +26,12 @@
       <WeatherCurrent
         @handleDeleteButton="handleDeleteButton"
         :weather="weatherCurrent"
-        v-else
+        v-if="typeOfWeather === 'today'"
       />
+
+      <span class="weather__main-no-city" v-if="!weatherCurrent.length">
+        There are no cities added.
+      </span>
     </div>
   </div>
 </template>
@@ -113,23 +120,33 @@ export default {
 
 <style lang="scss" scoped>
 .weather {
+  display: grid;
+  grid-template-rows: [header] min-content [main] auto;
+  grid-template-columns: auto;
+  height: 100%;
+}
+
+.weather__header {
+  grid-row-start: header;
+}
+
+.weather__header-navigation {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 
 .weather__main {
-  padding-top: 16px;
-}
-
-.weather__card {
-  width: 100px;
-  margin: 16px;
-}
-
-.weather__forecast {
+  grid-row-start: main;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  padding: 16px;
+  overflow: auto;
+}
+
+.weather__main-no-city {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  align-self: center;
 }
 </style>
