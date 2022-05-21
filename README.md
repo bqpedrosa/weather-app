@@ -1,3 +1,7 @@
+---
+permalink: /index.html
+---
+
 # weather-app
 
 ## Project setup
