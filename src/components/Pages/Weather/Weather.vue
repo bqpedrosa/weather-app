@@ -2,7 +2,6 @@
   <div class="weather">
     <div class="weather__header">
       <WeatherHeader
-        class="weather__header-main"
         v-model="cityChosen"
         title="Weather App"
         @handleInputClick="handleInputClick"
