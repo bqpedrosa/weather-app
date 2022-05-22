@@ -1,8 +1,7 @@
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-    // publicPath: process.env.NODE_ENV === "production" ? "/weather-app/" : "/",
-    publicPath: "/",
+    publicPath: process.env.NODE_ENV === "production" ? "/weather-app/" : "/",
 
     configureWebpack: {
       plugins: [new Dotenv()],
